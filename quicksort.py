@@ -31,6 +31,10 @@ def quicksort(arr, left, right):
 def quicksort2(arr, left, right):
     if left >= right:
         return
+    if left + 1 == right:
+        if arr[left] > arr[right]:
+            swap(arr, left, right)
+        return
     leftpos, rightpos = left, right-1
     thevalue = arr.pop(right)
     while leftpos < right:
@@ -56,6 +60,7 @@ quicksort(arr,0, arr.size -1)
 print(arr)
 
 arr2 = np.random.rand(100)
+#arr2 = range(6,1, -1)
 arr2 = list(arr2)
 quicksort2(arr2 ,0, len(arr2) -1)
-print(arr)
+print(arr2)
